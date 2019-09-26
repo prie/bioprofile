@@ -1,0 +1,60 @@
+# Declaration of Bio Profile routing.
+
+# This menu entry will call display method in the controller which return a description.html.twig
+bioprofile.bio_display:
+  path: '/admin/bioprofile'
+  defaults:
+    _controller: '\Drupal\bioprofile\Controller\BioprofileController::description'
+    _title: 'Bio Profile'
+  requirements:
+    _permission: 'administer content'
+
+
+# This menu entry will call display method in the controller which return a list of biodata in table
+bioprofile.bio_table_display:
+  path: '/admin/bioprofile/list'
+  defaults:
+    _controller: '\Drupal\bioprofile\Controller\BioprofileController::bioprofileList'
+    _title: 'Bio Profile List'
+  requirements:
+    _permission: 'administer content'
+
+# This menu entry will call add form
+bioprofile.bio_form:
+  path: '/admin/bioprofile/form'
+  defaults:
+    _form: '\Drupal\bioprofile\Form\BioprofileForm'
+    _title: 'Bio Profile Form'
+  requirements:
+    _permission: 'administer content'
+    _access: 'TRUE'
+
+# This menu entry will call edit form
+bioprofile.edit_form:
+  path: '/admin/bioprofile/{cid}/edit'
+  defaults:
+    _form: '\Drupal\bioprofile\Form\BioprofileForm'
+    _title: 'Bio Profile Form'
+  requirements:
+    _permission: 'administer content'
+    _access: 'TRUE'
+
+# This menu entry will call delete form
+bioprofile.delete_form:
+  path: '/admin/bioprofile/{cid}/delete'
+  defaults:
+    _form: '\Drupal\bioprofile\Form\DeleteForm'
+    _title: 'Bio Profile Delete'
+  requirements:
+    _permission: 'administer content'
+    _access: 'TRUE'
+
+# This menu entry will call setting form
+bioprofile.setting_form:
+  path: '/admin/bioprofile/setting'
+  defaults:
+    _form: '\Drupal\bioprofile\Form\BioprofileSettingForm'
+    _title: 'Bio Profile Setting'
+  requirements:
+    _permission: 'administer content'
+    _access: 'TRUE'

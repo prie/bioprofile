@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * Implements hook_schema()
+ * Create database table on install and delete on uninstall
+ */
+function bioprofile_schema() {
+    $schema['bioprofile'] = array(
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'not null' => TRUE,
+            ),
+            'name' => array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+            ),
+            'mobile' => array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+            ),
+            'email' => array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+            ),
+            'age' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+            ),
+            'gender' => array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+            ),
+            'website' => array(
+                'type' => 'varchar',
+                'length' => 25,
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

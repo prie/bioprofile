@@ -1,0 +1,19 @@
+# This file links a menu link with route_name.
+# If menu_name is omitted, the "Tools" menu will be used.
+
+# bioprofile.admin:
+  # title: 'Bio Profile'
+  # description: 'Bio Profile module information page'
+  # parent: system.admin_config
+  # parent: user.admin_index
+  # route_name: bioprofile.bio_display
+  # expanded: 1
+  # weight: 100
+
+bioprofile.admin.setting:
+  title: 'Bio Profile Setting'
+  description: 'Bio Profile module setting page'
+  parent: user.admin_index
+  route_name: bioprofile.setting_form
+  # url: internal:/admin/help/admin_first_page
+  weight: 0

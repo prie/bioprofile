@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_help().
+ * automatic add 'Help' link in the module details
+ */
+function bioprofile_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        case 'help.page.bioprofile':
+            $about_var = [
+                ':link' => Url::fromRoute('help.page', ['name' => 'link'])->toString(),
+            ];
+            $uses_var = [
+                ':setting' => Url::fromRoute('bioprofile.setting_form')->toString(),
+            ];
+            $description_link = Link::createFromRoute(t('Description'), 'bioprofile.bio_display')->toString();
+            $form_link = Link::createFromRoute(t('Input Form'), 'bioprofile.bio_form')->toString();
+            $list_link = Link::createFromRoute(t('Data List'), 'bioprofile.bio_table_display')->toString();
+        
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('The Bioprofile module provide form to input biodata and listing them. It needs a <a href=":link">Link</a> module to create a link.', $about_var) . '</p>';
+            $output .= '<h3>' . t('Uses') . '</h3>';
+            $output .= '<p>' . t('Just install the Bioprofile module then configure the module <a href=":setting">here</a>.', $uses_var) . '</p>';
+            $output .= '<h3>' . t('Pages provided') . '</h3>';
+            $output .= '<ul><li>' . $description_link . '</li><li>' . $form_link . '</li><li>' . $list_link . '</li></ul>';
+        
+            return $output;
+    }
+}

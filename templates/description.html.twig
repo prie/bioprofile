@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Contains the text of the bioprofile explanation page
+ */
+#}
+
+{% set setting_path = path('bioprofile.setting_form') %}
+
+<div class='bioprofile-description'>
+{% trans %}
+    <h3>Description</h3>
+    <p>The Bioprofile is custom module to collect biodata and store to database.</p>
+    <h3>Module features:</h3>
+    <ul>
+        <li>Input biodata</li>
+        <li>List biodata</li>
+        <li>Edit biodata</li>
+        <li>Delete biodata</li>
+    </ul>
+    <h3>Setting page</h3>
+    <ul>
+        <li><a href={{ setting_path }}>setting</a></li>
+    </ul>
+{% endtrans %}
+</div>

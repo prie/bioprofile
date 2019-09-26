@@ -1,0 +1,15 @@
+# Show module info details in module list
+# name, type, core are required
+name: Bio Profile
+type: module
+description: 'Custom form to collect biodata or profile and save to database'
+package: 'Dev Custom'
+core: 8.x
+
+# dependencies format {project}:{module}
+# a link is a module in a drupal core
+dependencies:
+  - drupal:link
+
+# add 'Configure' link to this route (normally a module setting's form)
+configure: bioprofile.setting_form
