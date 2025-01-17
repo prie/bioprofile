@@ -1,3 +1,3 @@
 # Bioprofile
 
-The Bioprofile is a Drupal 8 custom module to collect biodata with custom form and save to database, display them in a list, edit and delete operation.
+The Bioprofile is a custom Drupal 8 module that facilitates the collection and management of biodata. Key features include a custom form for data entry, secure database storage, and user-friendly interfaces for data listing, editing, and deletion.
